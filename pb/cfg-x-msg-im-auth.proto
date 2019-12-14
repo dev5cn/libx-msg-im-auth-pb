@@ -33,7 +33,10 @@ message XmsgImAuthCfgPb
     XmsgImAuthCfgXscTcpServer priTcp = 11; 
     repeated XmsgImAuthCfgXmsgNeH2nAddr h2n = 12; 
     repeated XmsgImAuthCfgXmsgNeN2hAddr n2h = 13; 
+    map<string, XmsgImAuthPubService> xmsgApServiceAddr = 18; 
+    map<string, XmsgImAuthPubService> xmsgOssServiceAddr = 19; 
     XmsgImAuthCfgMisc misc = 14; 
+    map<string, string> kafkaProd = 15; 
     uint64 gts = 16; 
     uint64 uts = 17; 
 }
@@ -118,10 +121,21 @@ message XmsgImAuthCfgXmsgNeN2hAddr
     string addr = 4; 
 }
 
+message XmsgImAuthPubService
+{
+    string name = 1; 
+    repeated XmsgImAuthPubServiceAddress addr = 2; 
+}
+
+message XmsgImAuthPubServiceAddress
+{
+    string host = 1; 
+    string proto = 2; 
+}
+
 message XmsgImAuthCfgMisc
 {
-    string xmsgApServiceAddr = 1; 
-    string xmsgOssServiceAddr = 2; 
     bool registeEnable = 3; 
     uint32 tokenExpiredSeconds = 4; 
+    uint32 tokenSaveBatchSize = 5; 
 }

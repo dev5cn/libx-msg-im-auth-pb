@@ -28,6 +28,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -36,12 +39,18 @@ namespace protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[12];
+  static const ::google::protobuf::internal::ParseTable schema[17];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors();
+void InitDefaultsXmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUseImpl();
+void InitDefaultsXmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse();
+void InitDefaultsXmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUseImpl();
+void InitDefaultsXmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse();
+void InitDefaultsXmsgImAuthCfgPb_KafkaProdEntry_DoNotUseImpl();
+void InitDefaultsXmsgImAuthCfgPb_KafkaProdEntry_DoNotUse();
 void InitDefaultsXmsgImAuthCfgPbImpl();
 void InitDefaultsXmsgImAuthCfgPb();
 void InitDefaultsXmsgImAuthCfgMongodbImpl();
@@ -64,9 +73,16 @@ void InitDefaultsXmsgImAuthCfgXmsgNeH2nAddrImpl();
 void InitDefaultsXmsgImAuthCfgXmsgNeH2nAddr();
 void InitDefaultsXmsgImAuthCfgXmsgNeN2hAddrImpl();
 void InitDefaultsXmsgImAuthCfgXmsgNeN2hAddr();
+void InitDefaultsXmsgImAuthPubServiceImpl();
+void InitDefaultsXmsgImAuthPubService();
+void InitDefaultsXmsgImAuthPubServiceAddressImpl();
+void InitDefaultsXmsgImAuthPubServiceAddress();
 void InitDefaultsXmsgImAuthCfgMiscImpl();
 void InitDefaultsXmsgImAuthCfgMisc();
 inline void InitDefaults() {
+  InitDefaultsXmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse();
+  InitDefaultsXmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse();
+  InitDefaultsXmsgImAuthCfgPb_KafkaProdEntry_DoNotUse();
   InitDefaultsXmsgImAuthCfgPb();
   InitDefaultsXmsgImAuthCfgMongodb();
   InitDefaultsXmsgImAuthCfgMysql();
@@ -78,6 +94,8 @@ inline void InitDefaults() {
   InitDefaultsXmsgImAuthCfgXscRudpServer();
   InitDefaultsXmsgImAuthCfgXmsgNeH2nAddr();
   InitDefaultsXmsgImAuthCfgXmsgNeN2hAddr();
+  InitDefaultsXmsgImAuthPubService();
+  InitDefaultsXmsgImAuthPubServiceAddress();
   InitDefaultsXmsgImAuthCfgMisc();
 }
 }  // namespace protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto
@@ -96,6 +114,15 @@ extern XmsgImAuthCfgMysqlDefaultTypeInternal _XmsgImAuthCfgMysql_default_instanc
 class XmsgImAuthCfgPb;
 class XmsgImAuthCfgPbDefaultTypeInternal;
 extern XmsgImAuthCfgPbDefaultTypeInternal _XmsgImAuthCfgPb_default_instance_;
+class XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse;
+class XmsgImAuthCfgPb_KafkaProdEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImAuthCfgPb_KafkaProdEntry_DoNotUseDefaultTypeInternal _XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse_default_instance_;
+class XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse;
+class XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUseDefaultTypeInternal _XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse_default_instance_;
+class XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse;
+class XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUseDefaultTypeInternal;
+extern XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUseDefaultTypeInternal _XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse_default_instance_;
 class XmsgImAuthCfgXmsgNeH2nAddr;
 class XmsgImAuthCfgXmsgNeH2nAddrDefaultTypeInternal;
 extern XmsgImAuthCfgXmsgNeH2nAddrDefaultTypeInternal _XmsgImAuthCfgXmsgNeH2nAddr_default_instance_;
@@ -117,8 +144,77 @@ extern XmsgImAuthCfgXscUdpServerDefaultTypeInternal _XmsgImAuthCfgXscUdpServer_d
 class XmsgImAuthCfgXscWebSocketServer;
 class XmsgImAuthCfgXscWebSocketServerDefaultTypeInternal;
 extern XmsgImAuthCfgXscWebSocketServerDefaultTypeInternal _XmsgImAuthCfgXscWebSocketServer_default_instance_;
+class XmsgImAuthPubService;
+class XmsgImAuthPubServiceDefaultTypeInternal;
+extern XmsgImAuthPubServiceDefaultTypeInternal _XmsgImAuthPubService_default_instance_;
+class XmsgImAuthPubServiceAddress;
+class XmsgImAuthPubServiceAddressDefaultTypeInternal;
+extern XmsgImAuthPubServiceAddressDefaultTypeInternal _XmsgImAuthPubServiceAddress_default_instance_;
 
 // ===================================================================
+
+class XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse, 
+    ::std::string, ::XmsgImAuthPubService,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse, 
+    ::std::string, ::XmsgImAuthPubService,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse();
+  XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse& other);
+  static const XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse*>(&_XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse, 
+    ::std::string, ::XmsgImAuthPubService,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse, 
+    ::std::string, ::XmsgImAuthPubService,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse();
+  XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse& other);
+  static const XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse*>(&_XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse();
+  XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse& other);
+  static const XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse*>(&_XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
 
 class XmsgImAuthCfgPb : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImAuthCfgPb) */ {
  public:
@@ -155,7 +251,7 @@ class XmsgImAuthCfgPb : public ::google::protobuf::Message /* @@protoc_insertion
                &_XmsgImAuthCfgPb_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    3;
 
   void Swap(XmsgImAuthCfgPb* other);
   friend void swap(XmsgImAuthCfgPb& a, XmsgImAuthCfgPb& b) {
@@ -200,6 +296,7 @@ class XmsgImAuthCfgPb : public ::google::protobuf::Message /* @@protoc_insertion
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   // repeated .XmsgImAuthCfgXmsgNeH2nAddr h2n = 12;
@@ -225,6 +322,33 @@ class XmsgImAuthCfgPb : public ::google::protobuf::Message /* @@protoc_insertion
       mutable_n2h();
   const ::google::protobuf::RepeatedPtrField< ::XmsgImAuthCfgXmsgNeN2hAddr >&
       n2h() const;
+
+  // map<string, string> kafkaProd = 15;
+  int kafkaprod_size() const;
+  void clear_kafkaprod();
+  static const int kKafkaProdFieldNumber = 15;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      kafkaprod() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_kafkaprod();
+
+  // map<string, .XmsgImAuthPubService> xmsgApServiceAddr = 18;
+  int xmsgapserviceaddr_size() const;
+  void clear_xmsgapserviceaddr();
+  static const int kXmsgApServiceAddrFieldNumber = 18;
+  const ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >&
+      xmsgapserviceaddr() const;
+  ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >*
+      mutable_xmsgapserviceaddr();
+
+  // map<string, .XmsgImAuthPubService> xmsgOssServiceAddr = 19;
+  int xmsgossserviceaddr_size() const;
+  void clear_xmsgossserviceaddr();
+  static const int kXmsgOssServiceAddrFieldNumber = 19;
+  const ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >&
+      xmsgossserviceaddr() const;
+  ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >*
+      mutable_xmsgossserviceaddr();
 
   // string cgt = 1;
   void clear_cgt();
@@ -362,6 +486,24 @@ class XmsgImAuthCfgPb : public ::google::protobuf::Message /* @@protoc_insertion
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::XmsgImAuthCfgXmsgNeH2nAddr > h2n_;
   ::google::protobuf::RepeatedPtrField< ::XmsgImAuthCfgXmsgNeN2hAddr > n2h_;
+  ::google::protobuf::internal::MapField<
+      XmsgImAuthCfgPb_KafkaProdEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > kafkaprod_;
+  ::google::protobuf::internal::MapField<
+      XmsgImAuthCfgPb_XmsgApServiceAddrEntry_DoNotUse,
+      ::std::string, ::XmsgImAuthPubService,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > xmsgapserviceaddr_;
+  ::google::protobuf::internal::MapField<
+      XmsgImAuthCfgPb_XmsgOssServiceAddrEntry_DoNotUse,
+      ::std::string, ::XmsgImAuthPubService,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > xmsgossserviceaddr_;
   ::google::protobuf::internal::ArenaStringPtr cgt_;
   ::google::protobuf::internal::ArenaStringPtr cfgtype_;
   ::XmsgImAuthCfgMongodb* mongodb_;
@@ -417,7 +559,7 @@ class XmsgImAuthCfgMongodb : public ::google::protobuf::Message /* @@protoc_inse
                &_XmsgImAuthCfgMongodb_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    4;
 
   void Swap(XmsgImAuthCfgMongodb* other);
   friend void swap(XmsgImAuthCfgMongodb& a, XmsgImAuthCfgMongodb& b) {
@@ -524,7 +666,7 @@ class XmsgImAuthCfgMysql : public ::google::protobuf::Message /* @@protoc_insert
                &_XmsgImAuthCfgMysql_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    5;
 
   void Swap(XmsgImAuthCfgMysql* other);
   friend void swap(XmsgImAuthCfgMysql& a, XmsgImAuthCfgMysql& b) {
@@ -690,7 +832,7 @@ class XmsgImAuthCfgLog : public ::google::protobuf::Message /* @@protoc_insertio
                &_XmsgImAuthCfgLog_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    6;
 
   void Swap(XmsgImAuthCfgLog* other);
   friend void swap(XmsgImAuthCfgLog& a, XmsgImAuthCfgLog& b) {
@@ -812,7 +954,7 @@ class XmsgImAuthCfgXscTcpServer : public ::google::protobuf::Message /* @@protoc
                &_XmsgImAuthCfgXscTcpServer_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    7;
 
   void Swap(XmsgImAuthCfgXscTcpServer* other);
   friend void swap(XmsgImAuthCfgXscTcpServer& a, XmsgImAuthCfgXscTcpServer& b) {
@@ -1010,7 +1152,7 @@ class XmsgImAuthCfgXscHttpServer : public ::google::protobuf::Message /* @@proto
                &_XmsgImAuthCfgXscHttpServer_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    8;
 
   void Swap(XmsgImAuthCfgXscHttpServer* other);
   friend void swap(XmsgImAuthCfgXscHttpServer& a, XmsgImAuthCfgXscHttpServer& b) {
@@ -1156,7 +1298,7 @@ class XmsgImAuthCfgXscWebSocketServer : public ::google::protobuf::Message /* @@
                &_XmsgImAuthCfgXscWebSocketServer_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    6;
+    9;
 
   void Swap(XmsgImAuthCfgXscWebSocketServer* other);
   friend void swap(XmsgImAuthCfgXscWebSocketServer& a, XmsgImAuthCfgXscWebSocketServer& b) {
@@ -1258,7 +1400,7 @@ class XmsgImAuthCfgXscUdpServer : public ::google::protobuf::Message /* @@protoc
                &_XmsgImAuthCfgXscUdpServer_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    7;
+    10;
 
   void Swap(XmsgImAuthCfgXscUdpServer* other);
   friend void swap(XmsgImAuthCfgXscUdpServer& a, XmsgImAuthCfgXscUdpServer& b) {
@@ -1365,7 +1507,7 @@ class XmsgImAuthCfgXscRudpServer : public ::google::protobuf::Message /* @@proto
                &_XmsgImAuthCfgXscRudpServer_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    8;
+    11;
 
   void Swap(XmsgImAuthCfgXscRudpServer* other);
   friend void swap(XmsgImAuthCfgXscRudpServer& a, XmsgImAuthCfgXscRudpServer& b) {
@@ -1472,7 +1614,7 @@ class XmsgImAuthCfgXmsgNeH2nAddr : public ::google::protobuf::Message /* @@proto
                &_XmsgImAuthCfgXmsgNeH2nAddr_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    9;
+    12;
 
   void Swap(XmsgImAuthCfgXmsgNeH2nAddr* other);
   friend void swap(XmsgImAuthCfgXmsgNeH2nAddr& a, XmsgImAuthCfgXmsgNeH2nAddr& b) {
@@ -1631,7 +1773,7 @@ class XmsgImAuthCfgXmsgNeN2hAddr : public ::google::protobuf::Message /* @@proto
                &_XmsgImAuthCfgXmsgNeN2hAddr_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    10;
+    13;
 
   void Swap(XmsgImAuthCfgXmsgNeN2hAddr* other);
   friend void swap(XmsgImAuthCfgXmsgNeN2hAddr& a, XmsgImAuthCfgXmsgNeN2hAddr& b) {
@@ -1748,6 +1890,248 @@ class XmsgImAuthCfgXmsgNeN2hAddr : public ::google::protobuf::Message /* @@proto
 };
 // -------------------------------------------------------------------
 
+class XmsgImAuthPubService : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImAuthPubService) */ {
+ public:
+  XmsgImAuthPubService();
+  virtual ~XmsgImAuthPubService();
+
+  XmsgImAuthPubService(const XmsgImAuthPubService& from);
+
+  inline XmsgImAuthPubService& operator=(const XmsgImAuthPubService& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  XmsgImAuthPubService(XmsgImAuthPubService&& from) noexcept
+    : XmsgImAuthPubService() {
+    *this = ::std::move(from);
+  }
+
+  inline XmsgImAuthPubService& operator=(XmsgImAuthPubService&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const XmsgImAuthPubService& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const XmsgImAuthPubService* internal_default_instance() {
+    return reinterpret_cast<const XmsgImAuthPubService*>(
+               &_XmsgImAuthPubService_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    14;
+
+  void Swap(XmsgImAuthPubService* other);
+  friend void swap(XmsgImAuthPubService& a, XmsgImAuthPubService& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline XmsgImAuthPubService* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  XmsgImAuthPubService* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const XmsgImAuthPubService& from);
+  void MergeFrom(const XmsgImAuthPubService& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(XmsgImAuthPubService* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .XmsgImAuthPubServiceAddress addr = 2;
+  int addr_size() const;
+  void clear_addr();
+  static const int kAddrFieldNumber = 2;
+  const ::XmsgImAuthPubServiceAddress& addr(int index) const;
+  ::XmsgImAuthPubServiceAddress* mutable_addr(int index);
+  ::XmsgImAuthPubServiceAddress* add_addr();
+  ::google::protobuf::RepeatedPtrField< ::XmsgImAuthPubServiceAddress >*
+      mutable_addr();
+  const ::google::protobuf::RepeatedPtrField< ::XmsgImAuthPubServiceAddress >&
+      addr() const;
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // @@protoc_insertion_point(class_scope:XmsgImAuthPubService)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::XmsgImAuthPubServiceAddress > addr_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::TableStruct;
+  friend void ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthPubServiceImpl();
+};
+// -------------------------------------------------------------------
+
+class XmsgImAuthPubServiceAddress : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImAuthPubServiceAddress) */ {
+ public:
+  XmsgImAuthPubServiceAddress();
+  virtual ~XmsgImAuthPubServiceAddress();
+
+  XmsgImAuthPubServiceAddress(const XmsgImAuthPubServiceAddress& from);
+
+  inline XmsgImAuthPubServiceAddress& operator=(const XmsgImAuthPubServiceAddress& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  XmsgImAuthPubServiceAddress(XmsgImAuthPubServiceAddress&& from) noexcept
+    : XmsgImAuthPubServiceAddress() {
+    *this = ::std::move(from);
+  }
+
+  inline XmsgImAuthPubServiceAddress& operator=(XmsgImAuthPubServiceAddress&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const XmsgImAuthPubServiceAddress& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const XmsgImAuthPubServiceAddress* internal_default_instance() {
+    return reinterpret_cast<const XmsgImAuthPubServiceAddress*>(
+               &_XmsgImAuthPubServiceAddress_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    15;
+
+  void Swap(XmsgImAuthPubServiceAddress* other);
+  friend void swap(XmsgImAuthPubServiceAddress& a, XmsgImAuthPubServiceAddress& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline XmsgImAuthPubServiceAddress* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  XmsgImAuthPubServiceAddress* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const XmsgImAuthPubServiceAddress& from);
+  void MergeFrom(const XmsgImAuthPubServiceAddress& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(XmsgImAuthPubServiceAddress* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string host = 1;
+  void clear_host();
+  static const int kHostFieldNumber = 1;
+  const ::std::string& host() const;
+  void set_host(const ::std::string& value);
+  #if LANG_CXX11
+  void set_host(::std::string&& value);
+  #endif
+  void set_host(const char* value);
+  void set_host(const char* value, size_t size);
+  ::std::string* mutable_host();
+  ::std::string* release_host();
+  void set_allocated_host(::std::string* host);
+
+  // string proto = 2;
+  void clear_proto();
+  static const int kProtoFieldNumber = 2;
+  const ::std::string& proto() const;
+  void set_proto(const ::std::string& value);
+  #if LANG_CXX11
+  void set_proto(::std::string&& value);
+  #endif
+  void set_proto(const char* value);
+  void set_proto(const char* value, size_t size);
+  ::std::string* mutable_proto();
+  ::std::string* release_proto();
+  void set_allocated_proto(::std::string* proto);
+
+  // @@protoc_insertion_point(class_scope:XmsgImAuthPubServiceAddress)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr host_;
+  ::google::protobuf::internal::ArenaStringPtr proto_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::TableStruct;
+  friend void ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthPubServiceAddressImpl();
+};
+// -------------------------------------------------------------------
+
 class XmsgImAuthCfgMisc : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:XmsgImAuthCfgMisc) */ {
  public:
   XmsgImAuthCfgMisc();
@@ -1783,7 +2167,7 @@ class XmsgImAuthCfgMisc : public ::google::protobuf::Message /* @@protoc_inserti
                &_XmsgImAuthCfgMisc_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    11;
+    16;
 
   void Swap(XmsgImAuthCfgMisc* other);
   friend void swap(XmsgImAuthCfgMisc& a, XmsgImAuthCfgMisc& b) {
@@ -1830,34 +2214,6 @@ class XmsgImAuthCfgMisc : public ::google::protobuf::Message /* @@protoc_inserti
 
   // accessors -------------------------------------------------------
 
-  // string xmsgApServiceAddr = 1;
-  void clear_xmsgapserviceaddr();
-  static const int kXmsgApServiceAddrFieldNumber = 1;
-  const ::std::string& xmsgapserviceaddr() const;
-  void set_xmsgapserviceaddr(const ::std::string& value);
-  #if LANG_CXX11
-  void set_xmsgapserviceaddr(::std::string&& value);
-  #endif
-  void set_xmsgapserviceaddr(const char* value);
-  void set_xmsgapserviceaddr(const char* value, size_t size);
-  ::std::string* mutable_xmsgapserviceaddr();
-  ::std::string* release_xmsgapserviceaddr();
-  void set_allocated_xmsgapserviceaddr(::std::string* xmsgapserviceaddr);
-
-  // string xmsgOssServiceAddr = 2;
-  void clear_xmsgossserviceaddr();
-  static const int kXmsgOssServiceAddrFieldNumber = 2;
-  const ::std::string& xmsgossserviceaddr() const;
-  void set_xmsgossserviceaddr(const ::std::string& value);
-  #if LANG_CXX11
-  void set_xmsgossserviceaddr(::std::string&& value);
-  #endif
-  void set_xmsgossserviceaddr(const char* value);
-  void set_xmsgossserviceaddr(const char* value, size_t size);
-  ::std::string* mutable_xmsgossserviceaddr();
-  ::std::string* release_xmsgossserviceaddr();
-  void set_allocated_xmsgossserviceaddr(::std::string* xmsgossserviceaddr);
-
   // bool registeEnable = 3;
   void clear_registeenable();
   static const int kRegisteEnableFieldNumber = 3;
@@ -1870,14 +2226,19 @@ class XmsgImAuthCfgMisc : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::uint32 tokenexpiredseconds() const;
   void set_tokenexpiredseconds(::google::protobuf::uint32 value);
 
+  // uint32 tokenSaveBatchSize = 5;
+  void clear_tokensavebatchsize();
+  static const int kTokenSaveBatchSizeFieldNumber = 5;
+  ::google::protobuf::uint32 tokensavebatchsize() const;
+  void set_tokensavebatchsize(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:XmsgImAuthCfgMisc)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr xmsgapserviceaddr_;
-  ::google::protobuf::internal::ArenaStringPtr xmsgossserviceaddr_;
   bool registeenable_;
   ::google::protobuf::uint32 tokenexpiredseconds_;
+  ::google::protobuf::uint32 tokensavebatchsize_;
   mutable int _cached_size_;
   friend struct ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::TableStruct;
   friend void ::protobuf_cfg_2dx_2dmsg_2dim_2dauth_2eproto::InitDefaultsXmsgImAuthCfgMiscImpl();
@@ -1891,6 +2252,12 @@ class XmsgImAuthCfgMisc : public ::google::protobuf::Message /* @@protoc_inserti
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // XmsgImAuthCfgPb
 
 // string cgt = 1;
@@ -2509,6 +2876,42 @@ XmsgImAuthCfgPb::n2h() const {
   return n2h_;
 }
 
+// map<string, .XmsgImAuthPubService> xmsgApServiceAddr = 18;
+inline int XmsgImAuthCfgPb::xmsgapserviceaddr_size() const {
+  return xmsgapserviceaddr_.size();
+}
+inline void XmsgImAuthCfgPb::clear_xmsgapserviceaddr() {
+  xmsgapserviceaddr_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >&
+XmsgImAuthCfgPb::xmsgapserviceaddr() const {
+  // @@protoc_insertion_point(field_map:XmsgImAuthCfgPb.xmsgApServiceAddr)
+  return xmsgapserviceaddr_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >*
+XmsgImAuthCfgPb::mutable_xmsgapserviceaddr() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImAuthCfgPb.xmsgApServiceAddr)
+  return xmsgapserviceaddr_.MutableMap();
+}
+
+// map<string, .XmsgImAuthPubService> xmsgOssServiceAddr = 19;
+inline int XmsgImAuthCfgPb::xmsgossserviceaddr_size() const {
+  return xmsgossserviceaddr_.size();
+}
+inline void XmsgImAuthCfgPb::clear_xmsgossserviceaddr() {
+  xmsgossserviceaddr_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >&
+XmsgImAuthCfgPb::xmsgossserviceaddr() const {
+  // @@protoc_insertion_point(field_map:XmsgImAuthCfgPb.xmsgOssServiceAddr)
+  return xmsgossserviceaddr_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::XmsgImAuthPubService >*
+XmsgImAuthCfgPb::mutable_xmsgossserviceaddr() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImAuthCfgPb.xmsgOssServiceAddr)
+  return xmsgossserviceaddr_.MutableMap();
+}
+
 // .XmsgImAuthCfgMisc misc = 14;
 inline bool XmsgImAuthCfgPb::has_misc() const {
   return this != internal_default_instance() && misc_ != NULL;
@@ -2557,6 +2960,24 @@ inline void XmsgImAuthCfgPb::set_allocated_misc(::XmsgImAuthCfgMisc* misc) {
   }
   misc_ = misc;
   // @@protoc_insertion_point(field_set_allocated:XmsgImAuthCfgPb.misc)
+}
+
+// map<string, string> kafkaProd = 15;
+inline int XmsgImAuthCfgPb::kafkaprod_size() const {
+  return kafkaprod_.size();
+}
+inline void XmsgImAuthCfgPb::clear_kafkaprod() {
+  kafkaprod_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+XmsgImAuthCfgPb::kafkaprod() const {
+  // @@protoc_insertion_point(field_map:XmsgImAuthCfgPb.kafkaProd)
+  return kafkaprod_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+XmsgImAuthCfgPb::mutable_kafkaprod() {
+  // @@protoc_insertion_point(field_mutable_map:XmsgImAuthCfgPb.kafkaProd)
+  return kafkaprod_.MutableMap();
 }
 
 // uint64 gts = 16;
@@ -4018,113 +4439,204 @@ inline void XmsgImAuthCfgXmsgNeN2hAddr::set_allocated_addr(::std::string* addr) 
 
 // -------------------------------------------------------------------
 
+// XmsgImAuthPubService
+
+// string name = 1;
+inline void XmsgImAuthPubService::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImAuthPubService::name() const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthPubService.name)
+  return name_.GetNoArena();
+}
+inline void XmsgImAuthPubService::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImAuthPubService.name)
+}
+#if LANG_CXX11
+inline void XmsgImAuthPubService::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthPubService.name)
+}
+#endif
+inline void XmsgImAuthPubService::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImAuthPubService.name)
+}
+inline void XmsgImAuthPubService::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthPubService.name)
+}
+inline ::std::string* XmsgImAuthPubService::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthPubService.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImAuthPubService::release_name() {
+  // @@protoc_insertion_point(field_release:XmsgImAuthPubService.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImAuthPubService::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthPubService.name)
+}
+
+// repeated .XmsgImAuthPubServiceAddress addr = 2;
+inline int XmsgImAuthPubService::addr_size() const {
+  return addr_.size();
+}
+inline void XmsgImAuthPubService::clear_addr() {
+  addr_.Clear();
+}
+inline const ::XmsgImAuthPubServiceAddress& XmsgImAuthPubService::addr(int index) const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthPubService.addr)
+  return addr_.Get(index);
+}
+inline ::XmsgImAuthPubServiceAddress* XmsgImAuthPubService::mutable_addr(int index) {
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthPubService.addr)
+  return addr_.Mutable(index);
+}
+inline ::XmsgImAuthPubServiceAddress* XmsgImAuthPubService::add_addr() {
+  // @@protoc_insertion_point(field_add:XmsgImAuthPubService.addr)
+  return addr_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::XmsgImAuthPubServiceAddress >*
+XmsgImAuthPubService::mutable_addr() {
+  // @@protoc_insertion_point(field_mutable_list:XmsgImAuthPubService.addr)
+  return &addr_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::XmsgImAuthPubServiceAddress >&
+XmsgImAuthPubService::addr() const {
+  // @@protoc_insertion_point(field_list:XmsgImAuthPubService.addr)
+  return addr_;
+}
+
+// -------------------------------------------------------------------
+
+// XmsgImAuthPubServiceAddress
+
+// string host = 1;
+inline void XmsgImAuthPubServiceAddress::clear_host() {
+  host_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImAuthPubServiceAddress::host() const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthPubServiceAddress.host)
+  return host_.GetNoArena();
+}
+inline void XmsgImAuthPubServiceAddress::set_host(const ::std::string& value) {
+  
+  host_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImAuthPubServiceAddress.host)
+}
+#if LANG_CXX11
+inline void XmsgImAuthPubServiceAddress::set_host(::std::string&& value) {
+  
+  host_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthPubServiceAddress.host)
+}
+#endif
+inline void XmsgImAuthPubServiceAddress::set_host(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  host_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImAuthPubServiceAddress.host)
+}
+inline void XmsgImAuthPubServiceAddress::set_host(const char* value, size_t size) {
+  
+  host_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthPubServiceAddress.host)
+}
+inline ::std::string* XmsgImAuthPubServiceAddress::mutable_host() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthPubServiceAddress.host)
+  return host_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImAuthPubServiceAddress::release_host() {
+  // @@protoc_insertion_point(field_release:XmsgImAuthPubServiceAddress.host)
+  
+  return host_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImAuthPubServiceAddress::set_allocated_host(::std::string* host) {
+  if (host != NULL) {
+    
+  } else {
+    
+  }
+  host_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), host);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthPubServiceAddress.host)
+}
+
+// string proto = 2;
+inline void XmsgImAuthPubServiceAddress::clear_proto() {
+  proto_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& XmsgImAuthPubServiceAddress::proto() const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthPubServiceAddress.proto)
+  return proto_.GetNoArena();
+}
+inline void XmsgImAuthPubServiceAddress::set_proto(const ::std::string& value) {
+  
+  proto_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:XmsgImAuthPubServiceAddress.proto)
+}
+#if LANG_CXX11
+inline void XmsgImAuthPubServiceAddress::set_proto(::std::string&& value) {
+  
+  proto_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthPubServiceAddress.proto)
+}
+#endif
+inline void XmsgImAuthPubServiceAddress::set_proto(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  proto_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:XmsgImAuthPubServiceAddress.proto)
+}
+inline void XmsgImAuthPubServiceAddress::set_proto(const char* value, size_t size) {
+  
+  proto_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthPubServiceAddress.proto)
+}
+inline ::std::string* XmsgImAuthPubServiceAddress::mutable_proto() {
+  
+  // @@protoc_insertion_point(field_mutable:XmsgImAuthPubServiceAddress.proto)
+  return proto_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* XmsgImAuthPubServiceAddress::release_proto() {
+  // @@protoc_insertion_point(field_release:XmsgImAuthPubServiceAddress.proto)
+  
+  return proto_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void XmsgImAuthPubServiceAddress::set_allocated_proto(::std::string* proto) {
+  if (proto != NULL) {
+    
+  } else {
+    
+  }
+  proto_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), proto);
+  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthPubServiceAddress.proto)
+}
+
+// -------------------------------------------------------------------
+
 // XmsgImAuthCfgMisc
-
-// string xmsgApServiceAddr = 1;
-inline void XmsgImAuthCfgMisc::clear_xmsgapserviceaddr() {
-  xmsgapserviceaddr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& XmsgImAuthCfgMisc::xmsgapserviceaddr() const {
-  // @@protoc_insertion_point(field_get:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-  return xmsgapserviceaddr_.GetNoArena();
-}
-inline void XmsgImAuthCfgMisc::set_xmsgapserviceaddr(const ::std::string& value) {
-  
-  xmsgapserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-}
-#if LANG_CXX11
-inline void XmsgImAuthCfgMisc::set_xmsgapserviceaddr(::std::string&& value) {
-  
-  xmsgapserviceaddr_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-}
-#endif
-inline void XmsgImAuthCfgMisc::set_xmsgapserviceaddr(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  xmsgapserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-}
-inline void XmsgImAuthCfgMisc::set_xmsgapserviceaddr(const char* value, size_t size) {
-  
-  xmsgapserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-}
-inline ::std::string* XmsgImAuthCfgMisc::mutable_xmsgapserviceaddr() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-  return xmsgapserviceaddr_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImAuthCfgMisc::release_xmsgapserviceaddr() {
-  // @@protoc_insertion_point(field_release:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-  
-  return xmsgapserviceaddr_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImAuthCfgMisc::set_allocated_xmsgapserviceaddr(::std::string* xmsgapserviceaddr) {
-  if (xmsgapserviceaddr != NULL) {
-    
-  } else {
-    
-  }
-  xmsgapserviceaddr_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), xmsgapserviceaddr);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthCfgMisc.xmsgApServiceAddr)
-}
-
-// string xmsgOssServiceAddr = 2;
-inline void XmsgImAuthCfgMisc::clear_xmsgossserviceaddr() {
-  xmsgossserviceaddr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& XmsgImAuthCfgMisc::xmsgossserviceaddr() const {
-  // @@protoc_insertion_point(field_get:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-  return xmsgossserviceaddr_.GetNoArena();
-}
-inline void XmsgImAuthCfgMisc::set_xmsgossserviceaddr(const ::std::string& value) {
-  
-  xmsgossserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-}
-#if LANG_CXX11
-inline void XmsgImAuthCfgMisc::set_xmsgossserviceaddr(::std::string&& value) {
-  
-  xmsgossserviceaddr_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-}
-#endif
-inline void XmsgImAuthCfgMisc::set_xmsgossserviceaddr(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  xmsgossserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-}
-inline void XmsgImAuthCfgMisc::set_xmsgossserviceaddr(const char* value, size_t size) {
-  
-  xmsgossserviceaddr_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-}
-inline ::std::string* XmsgImAuthCfgMisc::mutable_xmsgossserviceaddr() {
-  
-  // @@protoc_insertion_point(field_mutable:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-  return xmsgossserviceaddr_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* XmsgImAuthCfgMisc::release_xmsgossserviceaddr() {
-  // @@protoc_insertion_point(field_release:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-  
-  return xmsgossserviceaddr_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void XmsgImAuthCfgMisc::set_allocated_xmsgossserviceaddr(::std::string* xmsgossserviceaddr) {
-  if (xmsgossserviceaddr != NULL) {
-    
-  } else {
-    
-  }
-  xmsgossserviceaddr_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), xmsgossserviceaddr);
-  // @@protoc_insertion_point(field_set_allocated:XmsgImAuthCfgMisc.xmsgOssServiceAddr)
-}
 
 // bool registeEnable = 3;
 inline void XmsgImAuthCfgMisc::clear_registeenable() {
@@ -4154,9 +4666,33 @@ inline void XmsgImAuthCfgMisc::set_tokenexpiredseconds(::google::protobuf::uint3
   // @@protoc_insertion_point(field_set:XmsgImAuthCfgMisc.tokenExpiredSeconds)
 }
 
+// uint32 tokenSaveBatchSize = 5;
+inline void XmsgImAuthCfgMisc::clear_tokensavebatchsize() {
+  tokensavebatchsize_ = 0u;
+}
+inline ::google::protobuf::uint32 XmsgImAuthCfgMisc::tokensavebatchsize() const {
+  // @@protoc_insertion_point(field_get:XmsgImAuthCfgMisc.tokenSaveBatchSize)
+  return tokensavebatchsize_;
+}
+inline void XmsgImAuthCfgMisc::set_tokensavebatchsize(::google::protobuf::uint32 value) {
+  
+  tokensavebatchsize_ = value;
+  // @@protoc_insertion_point(field_set:XmsgImAuthCfgMisc.tokenSaveBatchSize)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
